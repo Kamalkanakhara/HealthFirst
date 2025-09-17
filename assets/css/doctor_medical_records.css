@@ -1,0 +1,179 @@
+/*
+==============================================
+Doctor's Medical Records Page Styles
+==============================================
+*/
+:root {
+    --primary-color: #7c3aed;
+    --primary-light: #a78bfa;
+    --main-bg: #f9fafb;
+    --border-color: #e5e7eb;
+}
+
+/* --- Header --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-link {
+    font-size: 20px;
+    color: #374151;
+    text-decoration: none;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.back-link:hover {
+    background-color: #f3f4f6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.add-record-btn {
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-record-btn i {
+    margin-right: 8px;
+}
+
+.add-record-btn:hover {
+    background-color: #6d28d9;
+    transform: translateY(-2px);
+}
+
+/* --- Timeline --- */
+.records-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.records-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 60px;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    border: 4px solid var(--main-bg);
+}
+
+.record-type-consultation { background-color: #3b82f6; }
+.record-type-lab-result { background-color: #10b981; }
+.record-type-prescription { background-color: #8b5cf6; }
+
+.timeline-content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+.record-date {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 8px;
+    display: block;
+}
+.timeline-content h3 { margin: 0 0 5px 0; }
+.record-doctor { font-style: italic; color: #4b5563; margin: 0 0 15px 0; }
+.record-summary { line-height: 1.6; }
+
+/* --- Add Record Form --- */
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; font-weight: 600; margin-bottom: 8px; }
+.input-group input, .input-group select, .input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+.input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.submit-btn:hover { background-color: #6d28d9; }
+
+/* No Records Placeholder */
+.no-records-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 50px;
+    text-align: center;
+    border: 2px dashed #d1d5db;
+}
+
+.no-records-card i { font-size: 48px; color: #9ca3af; margin-bottom: 20px; }
+.no-records-card h2 { font-size: 22px; margin: 0 0 10px 0; }
+.no-records-card p { color: #6b7280; margin: 0; }

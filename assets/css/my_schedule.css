@@ -1,0 +1,191 @@
+/* Main container for calendar and appointment list */
+.schedule-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.calendar-container {
+    flex: 3;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.calendar-header button {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.calendar-header button:hover {
+    background-color: #f1f3f5;
+}
+
+/* NEW: Styles for the separated weekday headers and days grid */
+.calendar-weekdays,
+.calendar-days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+}
+
+.calendar-weekdays {
+    margin-bottom: 0.5rem;
+}
+
+.calendar-weekdays > div {
+    text-align: center;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.calendar-day {
+    text-align: center;
+    padding: 0.75rem 0;
+    cursor: pointer;
+    border-radius: 50%;
+    position: relative;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.calendar-day:not(.empty):not(.past):hover {
+    background-color: #f3e8ff;
+}
+.calendar-day.today {
+    font-weight: bold;
+    border: 2px solid var(--primary-color);
+}
+.calendar-day.selected {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.calendar-day.past {
+    color: #adb5bd;
+    cursor: default;
+}
+.calendar-day.empty {
+    cursor: default;
+}
+.calendar-day.has-appointment::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-light);
+    border-radius: 50%;
+}
+.calendar-day.selected.has-appointment::after {
+    background-color: var(--white-color);
+}
+
+
+/* Appointments Display Panel */
+.appointments-display {
+    flex: 2;
+    background-color: var(--white-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.appointments-display h3 {
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.appointment-item {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border-left: 5px solid;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.appointment-item:last-child {
+    margin-bottom: 0;
+}
+
+.appointment-time {
+    font-weight: 500;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+.appointment-details {
+    flex-grow: 1;
+}
+.patient-name {
+    margin-bottom: 0.25rem;
+}
+.appointment-status {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Status colors matching dashboard theme */
+.status-pending { border-color: #f59e0b; background-color: #fef3c7; }
+.status-pending .appointment-status { color: #92400e; }
+
+.status-confirmed { border-color: #3b82f6; background-color: #dbeafe; }
+.status-confirmed .appointment-status { color: #1e40af; }
+
+.status-completed { border-color: #10b981; background-color: #d1fae5; }
+.status-completed .appointment-status { color: #065f46; }
+
+.status-cancelled { border-color: #ef4444; background-color: #fee2e2; }
+.status-cancelled .appointment-status { color: #991b1b; }
+
+
+.no-appointments {
+    text-align: center;
+    color: #6c757d;
+    padding: 2rem 0;
+}
+
+/* Responsive Adjustments for Schedule Page */
+@media (max-width: 992px) {
+    .schedule-container {
+        flex-direction: column;
+    }
+    .appointments-display {
+        margin-top: 1.5rem;
+        max-height: 40vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-header h2 {
+        font-size: 1.2rem;
+    }
+    .calendar-day {
+        padding: 0.5rem 0.2rem;
+        font-size: 0.8rem;
+    }
+}
+

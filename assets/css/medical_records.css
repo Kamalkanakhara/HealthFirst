@@ -1,0 +1,207 @@
+/*
+==============================================
+Medical Records Page Styles
+==============================================
+*/
+
+/* --- Header --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.upload-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.upload-btn i {
+    margin-right: 8px;
+}
+
+.upload-btn:hover {
+    background-color: #6d28d9;
+    transform: translateY(-2px);
+}
+
+
+/* --- Timeline Layout --- */
+.records-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* The vertical line */
+.records-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 60px;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    border: 4px solid var(--main-bg);
+}
+
+/* Icon Colors */
+.record-type-consultation { background-color: #3b82f6; } /* Blue */
+.record-type-lab-result { background-color: #10b981; } /* Green */
+.record-type-prescription { background-color: #8b5cf6; } /* Purple */
+
+
+.timeline-content {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    position: relative;
+}
+
+.record-date {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.timeline-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+    color: var(--text-dark);
+}
+
+.record-doctor {
+    margin: 0 0 15px 0;
+    font-style: italic;
+    color: #4b5563;
+}
+
+.record-summary {
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+}
+
+.record-actions {
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 15px;
+}
+
+.action-btn {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.action-btn.view-details {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+.action-btn.view-details:hover {
+    background-color: #e5e7eb;
+}
+
+.action-btn.download {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+.action-btn.download:hover {
+    background-color: #c4b5fd;
+}
+.action-btn.download i {
+    margin-right: 6px;
+}
+
+/* No Records Placeholder */
+.no-records-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 50px;
+    text-align: center;
+    border: 2px dashed #d1d5db;
+}
+
+.no-records-card i {
+    font-size: 48px;
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+.no-records-card h2 {
+    font-size: 22px;
+    margin: 0 0 10px 0;
+}
+
+.no-records-card p {
+    color: #6b7280;
+    margin: 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .records-timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+    
+    .timeline-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        left: -8px; /* Center on line */
+    }
+
+    .timeline-content {
+        padding: 20px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,218 @@
+.booking-interface {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    animation: fadeIn 0.7s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.booking-form {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+}
+
+.booking-details h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #4a148c;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.input-group select, .input-group textarea, .input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.input-group select:focus, .input-group textarea:focus, .input-group input:focus {
+    outline: none;
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+/* Calendar Styles */
+.calendar-container {
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav-btn {
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #7c3aed;
+    color: white;
+    border-color: #7c3aed;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar-day {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.2s ease-out;
+}
+
+.calendar-day:not(.disabled):hover {
+    background-color: #f3e5f5;
+    transform: scale(1.1);
+}
+
+.calendar-day.selected {
+    background-color: #7c3aed;
+    color: white;
+    font-weight: 600;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(124, 58, 237, 0.4);
+}
+
+.calendar-day.disabled {
+    color: #d1d5db;
+    cursor: not-allowed;
+}
+
+/* Time Slot Styles */
+.time-slot-container {
+    margin-top: 25px;
+}
+.time-slot-container h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #374151;
+}
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.time-slot {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.time-slot:hover {
+    border-color: #7c3aed;
+    color: #7c3aed;
+}
+
+.time-slot.selected {
+    background-color: #7c3aed;
+    color: white;
+    border-color: #7c3aed;
+    font-weight: 600;
+    transform: scale(1.05);
+}
+
+.time-slots .placeholder {
+    color: #9ca3af;
+    grid-column: 1 / -1;
+}
+
+.loader {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #f3e5f5;
+    border-top-color: #7c3aed;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.submit-btn {
+    grid-column: 1 / -1; /* Span across both columns */
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #7b1fa2, #4a148c);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .booking-form {
+        grid-template-columns: 1fr;
+    }
+}

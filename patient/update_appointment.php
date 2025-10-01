@@ -52,7 +52,8 @@ try {
                 <a href="dashboard.php" class="nav-item"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
                 <a href="view_doctors.php" class="nav-item"><i class="fas fa-user-md"></i><span>View Doctors</span></a>
                 <a href="book_appointment.php" class="nav-item"><i class="fas fa-calendar-plus"></i><span>Book Appointment</span></a>
-                <a href="my_appointments.php" class="nav-item active"><i class="fas fa-calendar-check"></i><span>My Appointments</span></a>
+                <a href="my_appointments.php" class="nav-item "><i class="fas fa-calendar-check"></i><span>My Appointments</span></a>
+                <a href="medical_records.php" class="nav-item "><i class="fas fa-file-medical"></i><span>Medical Records</span></a>
                 <a href="patient_profile.php" class="nav-item"><i class="fas fa-user-circle"></i><span>Profile</span></a>
                 <a href="../auth/logout.php" class="nav-item"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
             </nav>

@@ -121,16 +121,51 @@ function getIconForRecordType($type) {
         </main>
     </div>
 
-    <!-- Add Record Modal -->
+      <!-- Upload Record Modal -->
     <div id="upload-modal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <button id="close-upload-modal-btn" class="close-btn">&times;</button>
             <h2>Upload a New Medical Record</h2>
             <form action="upload_record_process.php" method="POST" class="modal-form" enctype="multipart/form-data">
-                 <!-- Form fields from previous step -->
+                <div class="input-group">
+                    <label for="record_date">Date of Record</label>
+                    <input type="date" id="record_date" name="record_date" required>
+                </div>
+                <div class="input-group">
+                    <label for="record_type">Type of Record</label>
+                    <select id="record_type" name="record_type" required>
+                        <option value="Consultation">Consultation Note</option>
+                        <option value="Lab Result">Lab Result</option>
+                        <option value="Prescription">Prescription</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="title">Title / Subject</label>
+                    <input type="text" id="title" name="title" placeholder="e.g., Annual Check-up, Blood Test" required>
+                </div>
+                 <div class="input-group">
+                    <label for="doctor_name_external">Doctor or Clinic Name</label>
+                    <input type="text" id="doctor_name_external" name="doctor_name_external" placeholder="e.g., Dr. John Smith, City Clinic" required>
+                </div>
+                <div class="input-group">
+                    <label for="summary">Summary / Notes</label>
+                    <textarea id="summary" name="summary" rows="4" placeholder="Add a brief summary of the record..."></textarea>
+                </div>
+                 <div class="input-group file-upload-group">
+                    <label for="record_file">Attach File (Optional)</label>
+                    <input type="file" id="record_file" name="record_file" class="file-input">
+                    <label for="record_file" class="file-label">
+                        <i class="fas fa-paperclip"></i>
+                        <span class="file-button-text">Choose File</span>
+                    </label>
+                    <span id="file-name-display" class="file-name">No file chosen</span>
+                </div>
+                <button type="submit" class="submit-btn">Add Record</button>
             </form>
         </div>
     </div>
+
     
     <!-- Edit Record Modal -->
     <div id="edit-modal" class="modal-overlay" style="display: none;">

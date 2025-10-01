@@ -37,6 +37,26 @@
     font-size: 18px;
     border: 4px solid var(--main-bg, #f9fafb);
 }
+.upload-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.upload-btn i {
+    margin-right: 8px;
+}
+
+.upload-btn:hover {
+    background-color: #6d28d9;
+    transform: translateY(-2px);
+}
 
 .record-type-consultation { background-color: #3b82f6; }
 .record-type-lab-result { background-color: #10b981; }

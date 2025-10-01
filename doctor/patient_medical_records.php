@@ -54,14 +54,14 @@ function getIconForRecordType($type) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Records for <?php echo htmlspecialchars($patient_name); ?> - HealthFirst</title>
-     <link rel="stylesheet" href="../assets/css/doctor_dashboard.css">
+   
     <link rel="stylesheet" href="../assets/css/doctor_medical_records.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="dashboard-container">
-        <aside class="sidebar">
+        <!-- <aside class="sidebar">
             <div class="sidebar-header"><a href="../homepage.php" class="logo">HealthFirst</a></div>
              <nav class="sidebar-nav">
                 <a href="dashboard.php" class="nav-item"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
@@ -72,7 +72,7 @@ function getIconForRecordType($type) {
                 <a href="doctor_profile.php" class="nav-item"><i class="fas fa-user-md"></i><span>Profile</span></a>
                 <a href="../auth/logout.php" class="nav-item"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
             </nav>
-        </aside>
+        </aside> -->
 
         <main class="main-content">
             <header class="main-header">

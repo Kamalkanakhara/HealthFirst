@@ -34,7 +34,7 @@ try {
 </head>
 <body>
     <div class="dashboard-container">
-        <aside class="sidebar">
+        <!-- <aside class="sidebar">
             <div class="sidebar-header"><a href="../homepage.php" class="logo">HealthFirst</a></div>
              <nav class="sidebar-nav">
                 <a href="dashboard.php" class="nav-item"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
@@ -44,7 +44,7 @@ try {
                 <a href="doctor_profile.php" class="nav-item"><i class="fas fa-user-md"></i><span>Profile</span></a>
                 <a href="../auth/logout.php" class="nav-item"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
             </nav>
-        </aside>
+        </aside> -->
 
         <main class="main-content">
              <header class="main-header">

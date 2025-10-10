@@ -58,6 +58,19 @@ try {
             </header>
 
             <section class="booking-interface">
+                
+                <!-- This block displays the success or error messages -->
+                <?php if (isset($_SESSION['booking_success'])): ?>
+                    <div class="status-message success">
+                        <i class="fas fa-check-circle"></i> <?php echo $_SESSION['booking_success']; unset($_SESSION['booking_success']); ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (isset($_SESSION['booking_error'])): ?>
+                    <div class="status-message error">
+                        <i class="fas fa-exclamation-circle"></i> <?php echo $_SESSION['booking_error']; unset($_SESSION['booking_error']); ?>
+                    </div>
+                <?php endif; ?>
+
                 <form action="book_appointment_process.php" method="POST" id="booking-form">
                     <div class="booking-details">
                         <h2>Appointment Details</h2>

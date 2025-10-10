@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         );
         
         if ($stmt->execute([$patient_id, $doctor_id, $appointment_date, $appointment_time_24h, $reason])) {
-            $_SESSION['booking_status_message'] = "Your appointment has been successfully requested! The current status is: <strong>Pending</strong>.";
+            $_SESSION['booking_success'] = "Your appointment has been successfully requested! The current status is: <strong>Pending</strong>.";
         } else {
             $_SESSION['booking_error'] = "Failed to book appointment. Please try again.";
         }

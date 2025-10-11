@@ -35,7 +35,6 @@ try {
 </head>
 <body>
     <div class="dashboard-container">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header"><a href="../homepage.php" class="logo">HealthFirst</a></div>
         <nav class="sidebar-nav">
@@ -49,7 +48,6 @@ try {
             </nav>
         </aside>
 
-        <!-- Main Content -->
         <main class="main-content">
             <header class="main-header">
                 <div class="header-left"><h1>My Profile</h1></div>
@@ -84,11 +82,11 @@ try {
                         <h2>Change Password</h2>
                         <div class="input-group">
                             <label for="new_password">New Password</label>
-                            <input type="password" id="new_password" name="new_password" placeholder="Leave blank to keep current password">
+                            <input type="password" id="new_password" name="new_password" placeholder="Leave blank to keep current password" minlength="8" title="Password must be at least 8 characters long.">
                         </div>
                         <div class="input-group">
                             <label for="confirm_password">Confirm New Password</label>
-                            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your new password">
+                            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your new password" minlength="8">
                         </div>
 
                         <button type="submit" class="submit-btn">Update Profile</button>

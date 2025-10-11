@@ -16,7 +16,6 @@
             <h1>Welcome Back!</h1>
             <p class="subtitle">Log in to access your HealthFirst account.</p>
             
-            <!-- Display Success/Error Messages -->
             <?php if (isset($_SESSION['login_error'])): ?>
                 <div class="status-message error"><?php echo $_SESSION['login_error']; unset($_SESSION['login_error']); ?></div>
             <?php endif; ?>
@@ -30,7 +29,7 @@
             </div>
             
             <div class="input-group">
-                <input type="password" name="password" required>
+                <input type="password" name="password" required minlength="8">
                 <label>Password</label>
             </div>
 

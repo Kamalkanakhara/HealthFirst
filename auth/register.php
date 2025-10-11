@@ -48,12 +48,12 @@
             </div>
 
             <div class="input-group">
-                <input type="password" name="password" required>
+                <input type="password" name="password" required minlength="8" title="Password must be at least 8 characters long.">
                 <label>Password</label>
             </div>
 
             <div class="input-group">
-                <input type="password" name="confirm_password" required>
+                <input type="password" name="confirm_password" required minlength="8">
                 <label>Confirm Password</label>
             </div>
 

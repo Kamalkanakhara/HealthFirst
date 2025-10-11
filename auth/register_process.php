@@ -9,10 +9,9 @@ require 'db_connect.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // --- 1. Get and Sanitize Form Data ---
-    // The 'phone' field is assumed to be in your form now, as per previous requests.
     $name = trim($_POST['name']);
     $email = trim($_POST['email']);
-    $phone = isset($_POST['phone']) ? trim($_POST['phone']) : ''; // Handle phone number
+    $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
     $role = $_POST['role'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
@@ -26,6 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $_SESSION['register_error'] = "Invalid email format.";
+        header("Location: register.php");
+        exit();
+    }
+    
+    // --- NEW: Check for password length ---
+    if (strlen($password) < 8) {
+        $_SESSION['register_error'] = "Password must be at least 8 characters long.";
         header("Location: register.php");
         exit();
     }
@@ -51,15 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-
     // --- 4. Insert New User into Database ---
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     try {
-        // Note: The phone number is included in the INSERT statement
         $stmt = $conn->prepare("INSERT INTO users (name, email, phone, role, password) VALUES (?, ?, ?, ?, ?)");
         if ($stmt->execute([$name, $email, $phone, $role, $hashed_password])) {
-            // On success, redirect to login page with a success message
             $_SESSION['success_message'] = "Registration successful! You can now log in.";
             header("Location: login.php");
             exit();
@@ -70,13 +73,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } catch (PDOException $e) {
         $_SESSION['register_error'] = "Database error during registration. Please try again later.";
-        // For debugging: error_log($e->getMessage());
         header("Location: register.php");
         exit();
     }
 
 } else {
-    // If the page is accessed directly without a POST request, redirect to the registration page
     header("Location: register.php");
     exit();
 }

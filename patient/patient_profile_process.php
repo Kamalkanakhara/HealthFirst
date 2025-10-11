@@ -41,6 +41,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // --- 4. Handle Password Change ---
     if (!empty($new_password)) {
+        // NEW: Validate password length
+        if (strlen($new_password) < 8) {
+            $_SESSION['profile_error'] = "New password must be at least 8 characters long.";
+            header("Location: patient_profile.php");
+            exit();
+        }
+
         if ($new_password !== $confirm_password) {
             $_SESSION['profile_error'] = "New passwords do not match.";
             header("Location: patient_profile.php");

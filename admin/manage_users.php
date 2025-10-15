@@ -118,7 +118,7 @@ try {
                                             <td><?php echo htmlspecialchars($doctor['email']); ?></td>
                                             <td><?php echo htmlspecialchars($doctor['phone']); ?></td>
                                             <td class="action-cell">
-                                                <form action="delete_user.php" method="POST" onsubmit="return confirm('Are you sure you want to delete this doctor?');" style="display:inline;">
+                                                <form action="delete_users.php" method="POST" onsubmit="return confirm('Are you sure you want to delete this doctor?');" style="display:inline;">
                                                     <input type="hidden" name="user_id" value="<?php echo $doctor['id']; ?>">
                                                     <button type="submit" class="action-btn delete">Delete</button>
                                                 </form>
